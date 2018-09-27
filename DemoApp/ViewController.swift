@@ -53,7 +53,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
       if let error = error {
-        print("GET Request: Communication error: \(error)")
+        print("POST Request: Communication error: \(error)")
+        self.locationManager.stopUpdatingLocation()
         return
       }
 
